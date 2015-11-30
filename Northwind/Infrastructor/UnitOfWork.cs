@@ -13,6 +13,7 @@ using Core.Domains.Categories;
 using Core.Domains.Customers;
 using Core.Domains.Master;
 using Infrastructor.Repositories;
+using Core.Domains.Territories;
 
 namespace Infrastructor
 {
@@ -33,6 +34,9 @@ namespace Infrastructor
         public DbSet<Region> Regions { get; set; }
 
         public DbSet<DemoGraphics> DemoGraphics { get; set; }
+
+        public DbSet<Territories> Territories { get; set; }
+
 
         public UnitOfWork():base("UnitOfWork")
         {

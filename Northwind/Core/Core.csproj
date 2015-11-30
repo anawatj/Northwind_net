@@ -49,9 +49,11 @@
     <Compile Include="Domains\Master\DemoGraphics.cs" />
     <Compile Include="Domains\Master\Region.cs" />
     <Compile Include="Domains\SimpleMasterObject.cs" />
+    <Compile Include="Domains\Territories\Territories.cs" />
     <Compile Include="Externals\IUnitOfWork.cs" />
     <Compile Include="Externals\Repository\ICategoriesRepository.cs" />
     <Compile Include="Externals\Repository\ICustomersRepository.cs" />
+    <Compile Include="Externals\Repository\ITerritoriesRepository.cs" />
     <Compile Include="Externals\Repository\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

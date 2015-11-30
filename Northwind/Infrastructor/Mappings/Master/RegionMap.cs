@@ -16,6 +16,7 @@ namespace Infrastructor.Mappings.Master
             HasKey(t => t.Id).Property(t => t.Id).HasColumnName("ID").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(t => t.Name).HasColumnName("NAME").HasMaxLength(200);
             HasMany(t => t.Customers).WithOptional(t => t.Region).HasForeignKey(t => t.RegionID);
+            HasMany(t => t.Territories).WithOptional(t => t.Region).HasForeignKey(t => t.RegionID);
 
             Property(t => t.CreateBy).HasColumnName("CREATE_BY").HasMaxLength(20);
             Property(t => t.CreateDate).HasColumnName("CREATE_DATE");
