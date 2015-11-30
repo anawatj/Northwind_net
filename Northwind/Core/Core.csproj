@@ -43,11 +43,17 @@
     <Compile Include="Domains\AbstractDomain.cs" />
     <Compile Include="Domains\Categories\Categories.cs" />
     <Compile Include="Domains\Customers\Customers.cs" />
+    <Compile Include="Domains\Employees\Educations.cs" />
+    <Compile Include="Domains\Employees\Employees.cs" />
+    <Compile Include="Domains\Employees\Experiences.cs" />
     <Compile Include="Domains\IDomain.cs" />
     <Compile Include="Domains\Master\City.cs" />
     <Compile Include="Domains\Master\Country.cs" />
     <Compile Include="Domains\Master\DemoGraphics.cs" />
+    <Compile Include="Domains\Master\Department.cs" />
+    <Compile Include="Domains\Master\EducationLevel.cs" />
     <Compile Include="Domains\Master\Region.cs" />
+    <Compile Include="Domains\Master\Title.cs" />
     <Compile Include="Domains\SimpleMasterObject.cs" />
     <Compile Include="Domains\Territories\Territories.cs" />
     <Compile Include="Externals\IUnitOfWork.cs" />
