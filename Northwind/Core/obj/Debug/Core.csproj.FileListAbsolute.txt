@@ -3,3 +3,8 @@ D:\Download\Github\Northwind_net\trunk\Northwind\Core\bin\Debug\Core.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\Core\obj\Debug\Core.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\Core\obj\Debug\Core.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\Project\Dotnet\Northwind_Net\trunk\Northwind\Core\bin\Debug\Core.dll
+D:\Project\Dotnet\Northwind_Net\trunk\Northwind\Core\bin\Debug\Core.pdb
+D:\Project\Dotnet\Northwind_Net\trunk\Northwind\Core\obj\Debug\Core.dll
+D:\Project\Dotnet\Northwind_Net\trunk\Northwind\Core\obj\Debug\Core.pdb
+D:\Project\Dotnet\Northwind_Net\trunk\Northwind\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

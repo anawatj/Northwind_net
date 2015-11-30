@@ -14,6 +14,7 @@ using Core.Domains.Customers;
 using Core.Domains.Master;
 using Infrastructor.Repositories;
 using Core.Domains.Territories;
+using Core.Domains.Employees;
 
 namespace Infrastructor
 {
@@ -36,6 +37,14 @@ namespace Infrastructor
         public DbSet<DemoGraphics> DemoGraphics { get; set; }
 
         public DbSet<Territories> Territories { get; set; }
+
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Title> Titles { get; set; }
+        public DbSet<EducationLevel> EducationLevels { get; set; }
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<Educations> Educations { get; set; }
+        public DbSet<Experiences> Experiences { get; set; }
+
 
 
         public UnitOfWork():base("UnitOfWork")

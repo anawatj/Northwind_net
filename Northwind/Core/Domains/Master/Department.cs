@@ -10,7 +10,8 @@ namespace Core.Domains.Master
     {
         public Department()
         {
-
+            this.Employees = new List<Employees.Employees>();
         }
+        public virtual ICollection<Employees.Employees> Employees { get; set; }
     }
 }

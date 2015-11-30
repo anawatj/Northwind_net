@@ -18,6 +18,9 @@ namespace Infrastructor.Mappings.Territories
 
             HasOptional(t => t.Region).WithMany(t => t.Territories).HasForeignKey(t => t.RegionID);
 
+            HasMany(t => t.Employees).WithMany(t => t.Territories).Map(t => t.ToTable("TBL_EMPLOYEES_TERRITORIES").MapLeftKey("TERRITORY_ID").MapRightKey("EMPLOYEE_ID"));
+
+
 
             Property(t => t.CreateBy).HasColumnName("CREATE_BY").HasMaxLength(20);
             Property(t => t.CreateDate).HasColumnName("CREATE_DATE");

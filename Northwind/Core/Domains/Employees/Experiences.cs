@@ -13,6 +13,7 @@ namespace Core.Domains.Employees
 
         }
         public virtual long? EmployeeID { get; set; }
+        public virtual Employees Employee { get; set; }
         public virtual string Company { get; set; }
         public virtual DateTime? Start { get; set; }
         public virtual DateTime? End { get; set; }

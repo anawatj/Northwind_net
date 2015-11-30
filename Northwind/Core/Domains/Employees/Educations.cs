@@ -14,6 +14,8 @@ namespace Core.Domains.Employees
 
         }
         public virtual long? EmployeeID { get; set; }
+        public virtual Employees Employee { get; set; }
+        public virtual long? EducationLevelID { get; set; }
         public virtual EducationLevel EducationLevel { get; set; }
         public virtual string University { get; set; }
         public virtual string Major { get; set; }

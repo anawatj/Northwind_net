@@ -10,7 +10,8 @@ namespace Core.Domains.Master
     {
         public EducationLevel()
         {
-
+            this.Educations = new List<Employees.Educations>();
         }
+        public virtual ICollection<Employees.Educations> Educations { get; set; }
     }
 }

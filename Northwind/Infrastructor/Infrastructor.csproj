@@ -11,6 +11,7 @@
     <AssemblyName>Infrastructor</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,16 +61,23 @@
   <ItemGroup>
     <Compile Include="Mappings\Categories\CategoriesMap.cs" />
     <Compile Include="Mappings\Customers\CustomersMap.cs" />
+    <Compile Include="Mappings\Employees\EducationsMap.cs" />
+    <Compile Include="Mappings\Employees\EmployeesMap.cs" />
+    <Compile Include="Mappings\Employees\ExperiencesMap.cs" />
     <Compile Include="Mappings\Master\CityMap.cs" />
     <Compile Include="Mappings\Master\CountryMap.cs" />
     <Compile Include="Mappings\Master\DemoGraphicsMap.cs" />
+    <Compile Include="Mappings\Master\DepartmentMap.cs" />
+    <Compile Include="Mappings\Master\EducationLevelMap.cs" />
     <Compile Include="Mappings\Master\RegionMap.cs" />
+    <Compile Include="Mappings\Master\TitleMap.cs" />
     <Compile Include="Mappings\Territories\TerritoriesMap.cs" />
     <Compile Include="MigrationInitialize\MigrateDbInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoriesRepository.cs" />
     <Compile Include="Repositories\CustomersRepository.cs" />
+    <Compile Include="Repositories\EmployeesRepository.cs" />
     <Compile Include="Repositories\MasterRepository.cs" />
     <Compile Include="Repositories\TerritoriesRepository.cs" />
     <Compile Include="UnitOfWork.cs" />

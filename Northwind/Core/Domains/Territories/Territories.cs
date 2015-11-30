@@ -11,11 +11,13 @@ namespace Core.Domains.Territories
     {
         public Territories()
         {
-
+            this.Employees = new List<Employees.Employees>();
         }
         public virtual string Name { get; set; }
         public virtual long? RegionID { get; set; }
 
         public virtual Region Region { get; set; }
+
+        public virtual ICollection<Employees.Employees> Employees { get; set; }
     }
 }

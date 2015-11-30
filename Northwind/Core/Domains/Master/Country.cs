@@ -11,7 +11,9 @@ namespace Core.Domains.Master
         public Country()
         {
             this.Customers = new List<Customers.Customers>();
+            this.Employees = new List<Employees.Employees>();
         }
         public virtual ICollection<Customers.Customers> Customers { get; set; }
+        public virtual ICollection<Employees.Employees> Employees { get; set; }
     }
 }
