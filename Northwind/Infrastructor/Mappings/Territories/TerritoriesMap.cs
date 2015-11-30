@@ -17,6 +17,12 @@ namespace Infrastructor.Mappings.Territories
             Property(t => t.RegionID).HasColumnName("REGION_ID");
 
             HasOptional(t => t.Region).WithMany(t => t.Territories).HasForeignKey(t => t.RegionID);
+
+
+            Property(t => t.CreateBy).HasColumnName("CREATE_BY").HasMaxLength(20);
+            Property(t => t.CreateDate).HasColumnName("CREATE_DATE");
+            Property(t => t.UpdateBy).HasColumnName("UPDATE_BY").HasMaxLength(20);
+            Property(t => t.UpdateDate).HasColumnName("UPDATE_DATE");
         }
     }
 }
