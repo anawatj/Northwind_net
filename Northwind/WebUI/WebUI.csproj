@@ -145,7 +145,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IoC\DependencyFilterProvider.cs" />
     <Compile Include="IoC\StructureMapInit.cs" />
+    <Compile Include="IoC\StructureMapScope.cs" />
     <Compile Include="Models\CategoriesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

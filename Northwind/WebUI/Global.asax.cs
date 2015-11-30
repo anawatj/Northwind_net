@@ -20,7 +20,8 @@ namespace WebUI
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            IContainer container = IoC.StructureMapInit.InitializeContainer();    
+            IContainer container = IoC.StructureMapInit.InitializeContainer();
+            GlobalConfiguration.Configuration.DependencyResolver = new IoC.StructureMapDependencyResolver(container);  
         }
     }
 }

@@ -34,15 +34,15 @@ namespace Infrastructor
 
         public DbSet<DemoGraphics> DemoGraphics { get; set; }
 
-        public UnitOfWork():base("DbConn")
+        public UnitOfWork():base("DefaultConnection")
         {
             
         }
-        public UnitOfWork(IContainer container)
+       /* public UnitOfWork(IContainer container)
         {
             this.container = container;
             this.Configuration.AutoDetectChangesEnabled = true;
-        }
+        }*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -63,7 +63,7 @@ namespace Infrastructor
             get
             {
                 if (this.categoriesRepository == null)
-                    this.categoriesRepository = container.With("dbset").EqualTo(Categories).GetInstance<ICategoriesRepository>();
+                    this.categoriesRepository = container.With("dbSet").EqualTo(Categories).GetInstance<ICategoriesRepository>();
 
                 return this.categoriesRepository;
             }
@@ -75,7 +75,7 @@ namespace Infrastructor
             {
                if(this.customersRepository ==null)
                 {
-                    this.customersRepository = container.With("dbset").EqualTo(Customers).GetInstance<ICustomersRepository>();
+                    this.customersRepository = container.With("dbSet").EqualTo(Customers).GetInstance<ICustomersRepository>();
                 }
                 return this.customersRepository;
             }
