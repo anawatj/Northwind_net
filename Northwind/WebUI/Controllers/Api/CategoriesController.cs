@@ -12,11 +12,11 @@ namespace WebUI.Controllers.Api
 {
     public class CategoriesController : ApiController
     {
-       
-        private ICategoriesRepository repository;
-        public CategoriesController(ICategoriesRepository respository)
-        {
 
+        private ICategoriesRepository repository;
+        public CategoriesController(ICategoriesRepository repository)
+        {
+            this.repository = repository;
 
         }
         [Route("Categories/All")]

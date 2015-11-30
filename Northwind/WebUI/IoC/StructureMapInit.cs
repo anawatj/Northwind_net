@@ -39,11 +39,10 @@ namespace WebUI.IoC
                 });
             For<IFilterProvider>().Use<DependencyResolverFilterProvider>();
             Policies.FillAllPropertiesOfType<IContainer>();
-            For<UnitOfWork>().Use<UnitOfWork>().Named("UnitOfWorkObject").LifecycleIs<HttpContextLifecycle>();
-            For<IUnitOfWork>().Use<UnitOfWork>(x => x.GetInstance<UnitOfWork>("UnitOfWorkObject")).LifecycleIs<HttpContextLifecycle>();
-            For<DbContext>().Use<UnitOfWork>(x => x.GetInstance<UnitOfWork>("UnitOfWorkObject")).LifecycleIs<HttpContextLifecycle>();
-            For<ICategoriesRepository>().Use<CategoriesRepository>(x => (CategoriesRepository)x.GetInstance<UnitOfWork>("UnitOfWorkObject").CategoryRepository).LifecycleIs<HttpContextLifecycle>();
-            For<ICustomersRepository>().Use<CustomersRepository>(x => (CustomersRepository)x.GetInstance<UnitOfWork>("UnitOfWorkObject").CustomerRepository).LifecycleIs<HttpContextLifecycle>();
+            For<UnitOfWork>().Use<UnitOfWork>().Named("UnitOfWork");
+            For<DbContext>().Use<UnitOfWork>();
+            For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>());
+            For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>());
             For<MasterRepository>().Use<MasterRepository>();
         }
     }

@@ -34,11 +34,11 @@ namespace Infrastructor
 
         public DbSet<DemoGraphics> DemoGraphics { get; set; }
 
-        public UnitOfWork():base("DefaultConnection")
+        public UnitOfWork():base("UnitOfWork")
         {
-            
+            this.Configuration.AutoDetectChangesEnabled = true;
         }
-       /* public UnitOfWork(IContainer container)
+        /*public UnitOfWork(IContainer container)
         {
             this.container = container;
             this.Configuration.AutoDetectChangesEnabled = true;
@@ -60,36 +60,16 @@ namespace Infrastructor
         }
         public ICategoriesRepository CategoryRepository
         {
-            get
-            {
-                if (this.categoriesRepository == null)
-                    this.categoriesRepository = container.With("dbSet").EqualTo(Categories).GetInstance<ICategoriesRepository>();
-
-                return this.categoriesRepository;
-            }
+            get;
         }
 
         public ICustomersRepository CustomerRepository
         {
-            get
-            {
-               if(this.customersRepository ==null)
-                {
-                    this.customersRepository = container.With("dbSet").EqualTo(Customers).GetInstance<ICustomersRepository>();
-                }
-                return this.customersRepository;
-            }
+            get;
         }
         public MasterRepository MasterRepository
         {
-            get
-            {
-                if(this.masterRepository == null)
-                {
-                    this.masterRepository = container.With("context").EqualTo(this).GetInstance<MasterRepository>();
-                }
-                return this.masterRepository;
-            }
+            get;
         }
     }
 }

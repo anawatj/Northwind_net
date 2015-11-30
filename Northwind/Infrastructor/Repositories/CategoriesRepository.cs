@@ -12,27 +12,27 @@ namespace Infrastructor.Repositories
 {
     public class CategoriesRepository : ICategoriesRepository
     {
-        private DbContext dbContext;
-        private DbSet<Categories> dbSet;
+        private UnitOfWork context;
+
     
-        public CategoriesRepository(DbSet<Categories> dbSet, DbContext dbContext)
+        public CategoriesRepository(UnitOfWork context)
         {
-            this.dbContext = dbContext;
-            this.dbSet = dbSet;
+            this.context = context;
+ 
         }
         public IQueryable<Categories> AsQueryable()
         {
-            return this.dbSet.AsQueryable();
+            return this.context.Categories.AsQueryable();
         }
 
         public List<Categories> GetAll()
         {
-            return this.dbSet.AsQueryable().ToList<Categories>();
+            return this.AsQueryable().ToList<Categories>();
         }
 
         public Categories GetById(long id)
         {
-            return this.dbSet.AsQueryable()
+            return this.AsQueryable()
                 .Where(t => t.Id == id)
                 .SingleOrDefault();
         }
@@ -40,16 +40,16 @@ namespace Infrastructor.Repositories
         public void Remove(long id)
         {
             Categories data = GetById(id);
-            this.dbSet.Remove(data);
-            this.dbContext.SaveChanges();
+            this.context.Categories.Remove(data);
+            this.context.SaveChanges();
         }
 
         public Categories Save(Categories entity)
         {
             if(entity.Id ==0 )
             {
-                Categories ret = this.dbSet.Add(entity);
-                this.dbContext.SaveChanges();
+                Categories ret = this.context.Categories.Add(entity);
+                this.context.SaveChanges();
                 return ret;
             }else
             {
@@ -58,7 +58,7 @@ namespace Infrastructor.Repositories
                 data.Description = entity.Description;
                 data.UpdateBy = entity.UpdateBy;
                 data.UpdateDate = DateTime.Now;
-                this.dbContext.SaveChanges();
+                this.context.SaveChanges();
                 return data;
             }
         }

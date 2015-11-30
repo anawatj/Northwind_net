@@ -12,26 +12,25 @@ namespace Infrastructor.Repositories
 {
     public class CustomersRepository : ICustomersRepository
     {
-        private DbSet<Customers> dbSet;
-        private DbContext dbContext;
-        public CustomersRepository(DbContext dbContext,DbSet<Customers> dbSet)
+
+        private UnitOfWork context;
+        public CustomersRepository(UnitOfWork context)
         {
-            this.dbContext = dbContext;
-            this.dbSet = dbSet;
+            this.context = context;
         }
         public IQueryable<Customers> AsQueryable()
         {
-            return this.dbSet.AsQueryable();
+            return this.context.Customers.AsQueryable();
         }
 
         public List<Customers> GetAll()
         {
-            return this.dbSet.AsQueryable().ToList<Customers>();
+            return this.AsQueryable().ToList<Customers>();
         }
 
         public Customers GetById(long id)
         {
-            return this.dbSet.AsQueryable()
+            return this.AsQueryable()
                 .Include(t=>t.City)
                 .Include(t=>t.Country)
                 .Include(t=>t.Region)
@@ -43,16 +42,16 @@ namespace Infrastructor.Repositories
         public void Remove(long id)
         {
             Customers data = GetById(id);
-            this.dbSet.Remove(data);
-            this.dbContext.SaveChanges();
+            this.context.Customers.Remove(data);
+            this.context.SaveChanges();
         }
 
         public Customers Save(Customers entity)
         {
             if(entity.Id==0)
             {
-                var ret =  this.dbSet.Add(entity);
-                this.dbContext.SaveChanges();
+                var ret =  this.context.Customers.Add(entity);
+                this.context.SaveChanges();
                 return ret;
             }else
             {
@@ -73,7 +72,7 @@ namespace Infrastructor.Repositories
 
                 data.DemoGraphics = entity.DemoGraphics;
 
-                this.dbContext.SaveChanges();
+                this.context.SaveChanges();
                 return data;
 
             }
