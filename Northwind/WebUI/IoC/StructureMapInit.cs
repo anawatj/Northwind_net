@@ -39,8 +39,8 @@ namespace WebUI.IoC
                 });
             For<IFilterProvider>().Use<DependencyResolverFilterProvider>();
             Policies.FillAllPropertiesOfType<IContainer>();
-            For<UnitOfWork>().Use<UnitOfWork>().Named("UnitOfWork");
-            For<DbContext>().Use<UnitOfWork>();
+            For<UnitOfWork>().Use(new UnitOfWork()).Named("UnitOfWork");
+            For<DbContext>().Use(t=>t.GetInstance<UnitOfWork>());
             For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>());
             For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>());
             For<MasterRepository>().Use<MasterRepository>();

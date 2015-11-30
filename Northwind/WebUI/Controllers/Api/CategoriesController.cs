@@ -14,9 +14,11 @@ namespace WebUI.Controllers.Api
     {
 
         private ICategoriesRepository repository;
-        public CategoriesController(ICategoriesRepository repository)
+        public CategoriesController()
         {
-            this.repository = repository;
+            IContainer container = IoC.StructureMapInit.InitializeContainer();
+            this.repository = container.GetInstance<ICategoriesRepository>();
+
 
         }
         [Route("Categories/All")]
