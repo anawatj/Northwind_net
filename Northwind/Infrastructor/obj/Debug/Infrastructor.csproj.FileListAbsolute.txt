@@ -1,4 +1,3 @@
-D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\obj\Debug\Infrastructor.csprojResolveAssemblyReference.cache
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\Infrastructor.dll.config
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\Infrastructor.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\Infrastructor.pdb
@@ -16,5 +15,6 @@ D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\Structu
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\StructureMap.Net4.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\StructureMap.Web.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\bin\Debug\StructureMap.Web.xml
+D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\obj\Debug\Infrastructor.csprojResolveAssemblyReference.cache
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\obj\Debug\Infrastructor.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\Infrastructor\obj\Debug\Infrastructor.pdb

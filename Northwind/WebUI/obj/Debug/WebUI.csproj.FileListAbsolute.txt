@@ -15,6 +15,7 @@ D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\WebUI.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\WebUI.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Core.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.dll
+D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.SqlServer.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Infrastructor.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Microsoft.Web.Infrastructure.dll
@@ -34,6 +35,7 @@ D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\System.Web.Webpages.R
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Core.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Infrastructor.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.xml
+D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.SqlServer.xml
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\StructureMap.pdb
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\StructureMap.xml
@@ -53,5 +55,3 @@ D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\System.Web.Http.WebHo
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\obj\Debug\WebUI.dll
 D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\obj\Debug\WebUI.pdb
-D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.SqlServer.dll
-D:\Download\Github\Northwind_net\trunk\Northwind\WebUI\bin\EntityFramework.SqlServer.xml
