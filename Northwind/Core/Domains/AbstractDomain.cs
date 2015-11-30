@@ -33,9 +33,9 @@ namespace Core.Domains
             get; set;
         }
 
-        public virtual int Version
+        /*public virtual int Version
         {
             get; set;
-        }
+        }*/
     }
 }

@@ -10,18 +10,18 @@ using System.Web.Http;
 
 namespace WebUI.Controllers.Api
 {
+
+    
     public class CategoriesController : ApiController
     {
 
         private ICategoriesRepository repository;
-        public CategoriesController()
+        public CategoriesController(ICategoriesRepository  repository)
         {
-            IContainer container = IoC.StructureMapInit.InitializeContainer();
-            this.repository = container.GetInstance<ICategoriesRepository>();
+            this.repository = repository;
 
 
         }
-        [Route("Categories/All")]
         [HttpGet]
         public IEnumerable<Categories> GetAll()
         {

@@ -9,7 +9,7 @@ namespace Core.Domains
     public interface IDomain<K>
     {
          K Id { get; set; }
-         int Version { get; set; }
+        // int Version { get; set; }
 
          string CreateBy { get; set; }
        

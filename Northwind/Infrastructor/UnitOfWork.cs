@@ -37,6 +37,7 @@ namespace Infrastructor
         public UnitOfWork():base("UnitOfWork")
         {
             this.Configuration.AutoDetectChangesEnabled = true;
+            Database.SetInitializer(new MigrationInitialize.MigrateDbInitializer());
         }
         /*public UnitOfWork(IContainer container)
         {

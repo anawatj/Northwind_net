@@ -39,10 +39,13 @@ namespace WebUI.IoC
                 });
             For<IFilterProvider>().Use<DependencyResolverFilterProvider>();
             Policies.FillAllPropertiesOfType<IContainer>();
-            For<UnitOfWork>().Use(new UnitOfWork()).Named("UnitOfWork");
-            For<DbContext>().Use(t=>t.GetInstance<UnitOfWork>());
-            For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>());
-            For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>());
+            For<UnitOfWork>().Use<UnitOfWork>().Named("UnitOfWorkObject").LifecycleIs<HttpContextLifecycle>();
+            For<IUnitOfWork>().Use<UnitOfWork>(x => x.GetInstance<UnitOfWork>("UnitOfWorkObject")).LifecycleIs<HttpContextLifecycle>();
+
+            // Asp.net Identity dependencys in managers
+            For<DbContext>().Use<UnitOfWork>(x => x.GetInstance<UnitOfWork>("UnitOfWorkObject"));
+            For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
+            For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<MasterRepository>().Use<MasterRepository>();
         }
     }
