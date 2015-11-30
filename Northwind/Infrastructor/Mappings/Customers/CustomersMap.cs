@@ -11,6 +11,7 @@ namespace Infrastructor.Mappings.Customers
     {
         public CustomersMap()
         {
+            ToTable("TBL_CUSTOMERS");
             HasKey(t => t.Id).Property(t => t.Id).HasColumnName("ID").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(t => t.CustomerCode).HasColumnName("CUSTOMER_CODE").HasMaxLength(20);
             Property(t => t.CompanyName).HasColumnName("COMPANY_NAME").HasMaxLength(200);

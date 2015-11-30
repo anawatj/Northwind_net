@@ -12,6 +12,7 @@ namespace Infrastructor.Mappings.Master
     {
         public RegionMap()
         {
+            ToTable("TBL_REGION");
             HasKey(t => t.Id).Property(t => t.Id).HasColumnName("ID").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(t => t.Name).HasColumnName("NAME").HasMaxLength(200);
             HasMany(t => t.Customers).WithOptional(t => t.Region).HasForeignKey(t => t.RegionID);

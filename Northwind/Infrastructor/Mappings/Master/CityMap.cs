@@ -12,6 +12,7 @@ namespace Infrastructor.Mappings.Master
     {
         public CityMap()
         {
+            ToTable("TBL_CITY");
             HasKey(t => t.Id).Property(t => t.Id).HasColumnName("ID").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(t => t.Name).HasColumnName("NAME").HasMaxLength(200);
             Property(t =>t.CountryID).HasColumnName("COUNTRY_ID");

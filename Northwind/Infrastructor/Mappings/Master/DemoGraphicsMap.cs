@@ -12,6 +12,7 @@ namespace Infrastructor.Mappings.Master
     {
         public DemoGraphicsMap()
         {
+            ToTable("TBL_DEMOGRAPHICS");
             HasKey(t => t.Id).Property(t => t.Id).HasColumnName("ID").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(t => t.Name).HasColumnName("NAME").HasMaxLength(200);
 
