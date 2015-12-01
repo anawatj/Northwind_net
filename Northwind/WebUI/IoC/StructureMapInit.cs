@@ -46,7 +46,8 @@ namespace WebUI.IoC
             For<DbContext>().Use<UnitOfWork>(x => x.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
-            For<MasterRepository>().Use<MasterRepository>();
+            For<IEmployeesRepository>().Use<EmployeesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
+            For<MasterRepository>().Use<MasterRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
         }
     }
     public class ControllerConvention : IRegistrationConvention
