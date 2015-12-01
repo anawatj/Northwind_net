@@ -71,6 +71,7 @@
     <Compile Include="Mappings\Master\EducationLevelMap.cs" />
     <Compile Include="Mappings\Master\RegionMap.cs" />
     <Compile Include="Mappings\Master\TitleMap.cs" />
+    <Compile Include="Mappings\Suppliers\SuppliersMap.cs" />
     <Compile Include="Mappings\Territories\TerritoriesMap.cs" />
     <Compile Include="MigrationInitialize\MigrateDbInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />

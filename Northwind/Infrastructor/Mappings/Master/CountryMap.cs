@@ -17,6 +17,9 @@ namespace Infrastructor.Mappings.Master
             Property(t => t.Name).HasColumnName("NAME").HasMaxLength(200);
 
             HasMany(t => t.Customers).WithOptional(t => t.Country).HasForeignKey(t => t.CountryID);
+            HasMany(t => t.Employees).WithOptional(t => t.Country).HasForeignKey(t => t.CountryID);
+            HasMany(t => t.Suppliers).WithOptional(t => t.Country).HasForeignKey(t => t.CountryID);
+
 
             Property(t => t.CreateBy).HasColumnName("CREATE_BY").HasMaxLength(20);
             Property(t => t.CreateDate).HasColumnName("CREATE_DATE");

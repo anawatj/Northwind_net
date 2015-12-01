@@ -22,6 +22,8 @@ namespace Infrastructor.Mappings.Master
             Property(t => t.UpdateDate).HasColumnName("UPDATE_DATE");
 
             HasMany(t => t.Customers).WithOptional(t => t.City).HasForeignKey(t => t.CityID);
+            HasMany(t => t.Employees).WithOptional(t => t.City).HasForeignKey(t => t.CityID);
+            HasMany(t => t.Suppliers).WithOptional(t => t.City).HasForeignKey(t => t.CityID);
         }
     }
 }

@@ -12,8 +12,12 @@ namespace Core.Domains.Master
         {
             this.Customers = new List<Customers.Customers>();
             this.Employees = new List<Employees.Employees>();
+            this.Suppliers = new List<Suppliers.Suppliers>();
         }
         public virtual ICollection<Customers.Customers> Customers { get; set; }
         public virtual ICollection<Employees.Employees> Employees { get; set; }
+
+        public virtual ICollection<Suppliers.Suppliers> Suppliers { get; set; }
+
     }
 }
