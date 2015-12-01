@@ -47,6 +47,7 @@ namespace WebUI.IoC
             For<ICategoriesRepository>().Use<CategoriesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<ICustomersRepository>().Use<CustomersRepository>().Ctor<UnitOfWork>("context").Is(t=>t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<IEmployeesRepository>().Use<EmployeesRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
+            For<ISuppliersRepository>().Use<SuppliersRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
             For<MasterRepository>().Use<MasterRepository>().Ctor<UnitOfWork>("context").Is(t => t.GetInstance<UnitOfWork>("UnitOfWorkObject"));
         }
     }
