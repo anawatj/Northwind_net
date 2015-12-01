@@ -15,15 +15,13 @@ using Core.Domains.Master;
 using Infrastructor.Repositories;
 using Core.Domains.Territories;
 using Core.Domains.Employees;
+using Core.Domains.Suppliers;
 
 namespace Infrastructor
 {
     public class UnitOfWork : DbContext, IUnitOfWork
     {
-        private IContainer container;
-        private ICategoriesRepository categoriesRepository;
-        private ICustomersRepository customersRepository;
-        private MasterRepository masterRepository;
+      
 
 
         public  DbSet<Categories> Categories { get; set; }
@@ -44,6 +42,8 @@ namespace Infrastructor
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Educations> Educations { get; set; }
         public DbSet<Experiences> Experiences { get; set; }
+        public DbSet<Suppliers> Suppliers { get; set; }
+
 
 
 
